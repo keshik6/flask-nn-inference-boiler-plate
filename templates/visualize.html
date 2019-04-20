@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D BOUNDING BOX APPROXIMATION</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="./static/css/cards-gallery.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron" align="center">
+    <h1>INFERENCE RESULTS</h1>
+  </div>
+
+   <section class="gallery-block cards-gallery">
+	    <div class="container">
+
+          <div class="col-md-4 col-lg-12">
+									<div class="card border-0 transform-on-hover">
+										<a class="lightbox" href={{image_url}}>
+											<img src="./static/temp/results-{{file_num}}.png" alt="Card Image" class="card-img-top">
+										</a>
+                      <div class="card-body">
+                          <button type="button" class="btn btn-warning">Our 3D BBOX Prediction</button>
+											</div>
+									</div>
+							</div>
+
+
+              <div class="col-md-4 col-lg-12">
+  									<div class="card border-0 transform-on-hover">
+  										<a class="lightbox" href={{image_url}}>
+  											<img src="./static/temp/gt-{{file_num}}.png" alt="Card Image" class="card-img-top">
+  										</a>
+  											<div class="card-body">
+                            <button type="button" class="btn btn-success">Ground Truth 3D BBOX</button>
+  											</div>
+  									</div>
+  							</div>
+
+
+            <div class="col-md-4 col-lg-12">
+                <div class="card border-0 transform-on-hover">
+                  <a class="lightbox" href={{image_url}}>
+                    <img src="./static/temp/original-{{file_num}}.png" alt="Card Image" class="card-img-top">
+                  </a>
+                    <div class="card-body">
+                          <button type="button" class="btn btn-info">Ground Truth 2D BBOX</button>
+                    </div>
+                </div>
+            </div>
+
+	    </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+    </script>
+</body>
+</html>
