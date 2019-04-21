@@ -44,14 +44,14 @@ def make_prediction():
          # Load Test Images from eval folder
         dataset = Dataset("./static/Kitti/validation")
         all_images = dataset.all_objects()
-        print ("Length of eval data",len(all_images))
+        #print ("Length of eval data",len(all_images))
         averages = ClassAverages.ClassAverages()
         print ("Model is commencing predictions.....")
 
 
         all_images = dataset.all_objects()
         new_dict = {img_key: all_images[img_key]}
-        print ("Length of eval data",len(new_dict))
+        #print ("Length of eval data",len(new_dict))
 
 
         for key in new_dict.keys():
@@ -91,7 +91,7 @@ def make_prediction():
 
 
             file_ = randint(0, 25000)
-            print(file_)
+            #print(file_)
             cv2.imwrite("./static/temp/original-{}.png".format(str(file_)), truth_img, [cv2.IMWRITE_PNG_COMPRESSION, 10])
             cv2.imwrite("./static/temp/gt-{}.png".format(file_), imgGT, [cv2.IMWRITE_PNG_COMPRESSION, 10])
             cv2.imwrite("./static/temp/results-{}.png".format(file_), img, [cv2.IMWRITE_PNG_COMPRESSION, 10])
