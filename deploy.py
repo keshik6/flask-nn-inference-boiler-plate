@@ -23,7 +23,7 @@ from random import randint
 app = Flask(__name__)
 
 @app.route("/")
-def index(images_to_display=6):
+def index(images_to_display=10):
     names = os.listdir(os.path.join('./static/Kitti', "validation", "image_2"))
     img_url_list = []
     rendering_images = sample(names, images_to_display)
