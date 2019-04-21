@@ -70,9 +70,9 @@ class Dataset(data.Dataset):
 
         # Global calib file
         self.proj_matrix = get_P("./static/Kitti/camera_cal/calib_cam_to_cam.txt")
-        print(glob.glob(self.top_img_path+'/*.png'))
+        #print(glob.glob(self.top_img_path+'/*.png'))
         self.ids = [x.split('.')[1].split("\\")[1] for x in sorted(glob.glob(self.top_img_path+'/*.png'))] # name of file
-        print(self.ids)
+        #print(self.ids)
         # self.ids = [x.split('.')[0] for x in sorted(os.listdir(self.top_img_path))]
         # print([x for x in sorted(glob.glob(self.top_img_path+'/*.png'))])
         self.num_images = len(self.ids)
